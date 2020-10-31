@@ -9,7 +9,7 @@
 #include "MedicineList.h"
 
 
-bool read_data(std::string file_name, MedicineList &m);
+void read_data(std::string file_name, MedicineList &m);
 void save_data(std::string file_name, MedicineList m);
 
 #endif //APTEKA_DATA_HANDLER_H

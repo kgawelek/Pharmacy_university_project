@@ -7,14 +7,17 @@
 #include "Medicine.h"
 
 class Pill: public Medicine {
-public:
+
     int nr_of_pills;
     const std::string category = "tabletki";
+public:
     Pill() = default;
-    Pill(std::string n, Prescription p, Age a,Replacements * r, Contraindications * c, int pills):
-    Medicine(n, p, a, r, c), nr_of_pills(pills){};
+    Pill(std::string n, Prescription p, Age a,Replacements * r, Contraindications * c, int pills, Price price1):
+    Medicine(n, p, a, r, c, price1), nr_of_pills(pills){};
+    int get_nr_of_pills(){return nr_of_pills;};
+    const std::string get_category(){return category; };
 };
 
-std::ostream &operator << (std::ostream& s, const Pill &med);
+std::ostream &operator << (std::ostream& s, Pill &med);
 
 #endif //APTEKA_PILL_H

@@ -7,13 +7,16 @@
 #include "Medicine.h"
 
 class Ointment: public Medicine {
-public:
+
     const std::string category = "masc";
     double weight;
-    Ointment(std::string n, double w, Prescription p, Age a,Replacements * r, Contraindications * c): Medicine(n, p, a, r, c), weight(w){};
+public:
+    Ointment(std::string n, double w, Prescription p, Age a,Replacements * r, Contraindications * c, Price price1): Medicine(n, p, a, r, c, price1), weight(w){};
+    const std::string get_category(){return category;};
+    double get_weight(){return weight;};
 };
 
-std::ostream &operator << (std::ostream& s, const Ointment &med);
+std::ostream &operator << (std::ostream& s, Ointment &med);
 
 
 #endif //APTEKA_OINTMENT_H

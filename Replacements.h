@@ -7,12 +7,19 @@
 #include <iostream>
 
 class Replacements {
+
 public:
+
     std::string rep_name;
     Replacements * next;
+
     Replacements() = default;
     ~Replacements()= default;
     Replacements (std::string n, Replacements * ptr): rep_name(n), next(ptr){};
+
+    std::string get_rep_name(){return rep_name;};
+    Replacements * get_next(){return next;};
+
 };
 
 

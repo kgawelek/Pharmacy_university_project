@@ -12,21 +12,25 @@
 class ListElement{
 
 
-public:
+
 
     Medicine * med = nullptr;
     Pill * pill = nullptr;
     Ointment * ointment = nullptr;
     Siroup * siroup = nullptr;
     ListElement * ptr_next = nullptr;
-
+public:
 
     ListElement()=default;
     ListElement(Medicine *m): med(m){};
     ListElement(Medicine *m, ListElement * ptr): med(m), ptr_next(ptr){};
     ~ListElement()=default;
 
-
+    Medicine * get_med(){return med;};
+    Pill * get_pill(){return pill; };
+    Ointment * get_ointment(){return ointment;};
+    Siroup * get_siroup(){return siroup;};
+    ListElement * get_ptr_next(){return ptr_next;};
 
     friend class MedicineList;
 };

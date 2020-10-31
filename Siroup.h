@@ -8,12 +8,15 @@
 #include "Medicine.h"
 
 class Siroup: public Medicine {
-public:
+
     const std::string category = "syrop";
     double volume;
-    Siroup(std::string n, double v, Prescription p, Age a,Replacements * r, Contraindications * c):
-    Medicine(n, p, a, r, c), volume(v){};
+public:
+    Siroup(std::string n, double v, Prescription p, Age a,Replacements * r, Contraindications * c, Price price1):
+    Medicine(n, p, a, r, c, price1), volume(v){};
+    std::string get_category(){return category;};
+    double get_volume(){return volume;};
 };
 
-std::ostream &operator << (std::ostream& s, const Siroup &med);
+std::ostream &operator << (std::ostream& s, Siroup &med);
 #endif //APTEKA_SIROUP_H
