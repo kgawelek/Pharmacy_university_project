@@ -154,7 +154,7 @@ void MedicineList::remove_medicine(std::string name) {
     }
 
     auto p = this->pHead;
-    while(p->ptr_next){
+    while(p && p->ptr_next){
         if((p->ptr_next->med && p->ptr_next->med->get_name() == name)
            || (p->ptr_next->pill && p->ptr_next->pill->get_name() == name)
            || (p->ptr_next->siroup && p->ptr_next->siroup->get_name() == name)
